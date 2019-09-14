@@ -59,7 +59,7 @@ static void readFile(char** filename)
 }
 
 
-static void getPosition(unsigned char const pattern[], uint32_t pattern_size, int32_t* const position)
+static void getPosition(const unsigned char* const pattern, uint32_t pattern_size, int32_t* const position)
 {
     uint32_t matched_idx = 0U;
     *position = -1;
@@ -133,22 +133,32 @@ int main(int argc, char* argv[])
         readFile(&argv[1]);
         getFlashPattern(&flashtype, &pattern);
 
-        switch (flashtype) {
-            case FLASH1M_V102:
-                printf("FLASH1M_V102 detected. Start patching!\n");
-                patch(&pattern);
-                outFile = fopen("output.gba", "wb");
-                fwrite(filedata, filesize, 1, outFile);
-            break;
-            case FLASH1M_V103:
-                printf("FLASH1M_V103 detected. Start patching!\n");
-                patch(&pattern);
-                outFile = fopen("output.gba", "wb");
-                fwrite(filedata, filesize, 1, outFile);
-            break;
-            default:
-                printf("Error: Flash Type not detected.");
-            break;
+        if (UNKNOWN == flashtype)
+        {
+            printf("Error: Flash Type not detected.");
+            retCode = 1;
+        }
+        else
+        {
+            char* output_name  = malloc(strlen(argv[1]) + 7);
+            strcpy(output_name, "output-");
+            strcat(output_name, argv[1]);
+            switch (flashtype) {
+                case FLASH1M_V102:
+                    printf("FLASH1M_V102 detected. Start patching!\n");
+                    patch(&pattern);
+                    outFile = fopen(output_name, "wb");
+                    fwrite(filedata, filesize, 1, outFile);
+                break;
+                case FLASH1M_V103:
+                    printf("FLASH1M_V103 detected. Start patching!\n");
+                    patch(&pattern);
+                    outFile = fopen(output_name, "wb");
+                    fwrite(filedata, filesize, 1, outFile);
+                break;
+                default:
+                break;
+            }
         }
 
         retCode = 0;
