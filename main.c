@@ -6,37 +6,37 @@
 
 #include "Patterns.h"
 
-static const PatchPattern_t FLASH1M_V102_Patches[] = {{{&FLASH1M_V102_MARKER_1, FLASH1M_V102_MARKER_1_LENGTH},
-                                                       {&FLASH1M_V102_REPLACE_1, FLASH1M_V102_MARKER_1_LENGTH}},
-                                                      {{&FLASH1M_V102_MARKER_2, FLASH1M_V102_MARKER_2_LENGTH},
-                                                       {&FLASH1M_V102_REPLACE_2, FLASH1M_V102_MARKER_2_LENGTH}},
-                                                      {{&FLASH1M_V102_MARKER_3, FLASH1M_V102_MARKER_3_LENGTH},
-                                                       {&FLASH1M_V102_REPLACE_3, FLASH1M_V102_MARKER_3_LENGTH}},
-                                                      {{&FLASH1M_V102_MARKER_4, FLASH1M_V102_MARKER_4_LENGTH},
-                                                       {&FLASH1M_V102_REPLACE_4, FLASH1M_V102_MARKER_4_LENGTH}},
-                                                      {{&FLASH1M_V102_MARKER_5, FLASH1M_V102_MARKER_5_LENGTH},
-                                                       {&FLASH1M_V102_REPLACE_5, FLASH1M_V102_MARKER_5_LENGTH}},
-                                                      {{&FLASH1M_V102_MARKER_6, FLASH1M_V102_MARKER_6_LENGTH},
-                                                       {&FLASH1M_V102_REPLACE_6, FLASH1M_V102_MARKER_6_LENGTH}}};
+static const PatchPattern_t FLASH1M_V102_Patches[] = {{{(unsigned char **)&FLASH1M_V102_MARKER_1, FLASH1M_V102_MARKER_1_LENGTH},
+                                                       {(unsigned char **)&FLASH1M_V102_REPLACE_1, FLASH1M_V102_MARKER_1_LENGTH}},
+                                                      {{(unsigned char **)&FLASH1M_V102_MARKER_2, FLASH1M_V102_MARKER_2_LENGTH},
+                                                       {(unsigned char **)&FLASH1M_V102_REPLACE_2, FLASH1M_V102_MARKER_2_LENGTH}},
+                                                      {{(unsigned char **)&FLASH1M_V102_MARKER_3, FLASH1M_V102_MARKER_3_LENGTH},
+                                                       {(unsigned char **)&FLASH1M_V102_REPLACE_3, FLASH1M_V102_MARKER_3_LENGTH}},
+                                                      {{(unsigned char **)&FLASH1M_V102_MARKER_4, FLASH1M_V102_MARKER_4_LENGTH},
+                                                       {(unsigned char **)&FLASH1M_V102_REPLACE_4, FLASH1M_V102_MARKER_4_LENGTH}},
+                                                      {{(unsigned char **)&FLASH1M_V102_MARKER_5, FLASH1M_V102_MARKER_5_LENGTH},
+                                                       {(unsigned char **)&FLASH1M_V102_REPLACE_5, FLASH1M_V102_MARKER_5_LENGTH}},
+                                                      {{(unsigned char **)&FLASH1M_V102_MARKER_6, FLASH1M_V102_MARKER_6_LENGTH},
+                                                       {(unsigned char **)&FLASH1M_V102_REPLACE_6, FLASH1M_V102_MARKER_6_LENGTH}}};
 
 
-static const PatchPattern_t FLASH1M_V103_Patches[] = {{{&FLASH1M_V103_MARKER_1, FLASH1M_V103_MARKER_1_LENGTH},
-                                                       {&FLASH1M_V103_REPLACE_1, FLASH1M_V103_MARKER_1_LENGTH}},
-                                                      {{&FLASH1M_V103_MARKER_2, FLASH1M_V103_MARKER_2_LENGTH},
-                                                       {&FLASH1M_V103_REPLACE_2, FLASH1M_V103_MARKER_2_LENGTH}},
-                                                      {{&FLASH1M_V103_MARKER_3, FLASH1M_V103_MARKER_3_LENGTH},
-                                                       {&FLASH1M_V103_REPLACE_3, FLASH1M_V103_MARKER_3_LENGTH}},
-                                                      {{&FLASH1M_V103_MARKER_4, FLASH1M_V103_MARKER_4_LENGTH},
-                                                       {&FLASH1M_V103_REPLACE_4, FLASH1M_V103_MARKER_4_LENGTH}},
-                                                      {{&FLASH1M_V103_MARKER_5, FLASH1M_V103_MARKER_5_LENGTH},
-                                                       {&FLASH1M_V103_REPLACE_5, FLASH1M_V103_MARKER_5_LENGTH}},
-                                                      {{&FLASH1M_V103_MARKER_6, FLASH1M_V103_MARKER_6_LENGTH},
-                                                       {&FLASH1M_V103_REPLACE_6, FLASH1M_V103_MARKER_6_LENGTH}},
-                                                      {{&FLASH1M_V103_MARKER_7, FLASH1M_V103_MARKER_7_LENGTH},
-                                                       {&FLASH1M_V103_REPLACE_7, FLASH1M_V103_MARKER_7_LENGTH}}};
+static const PatchPattern_t FLASH1M_V103_Patches[] = {{{(unsigned char **)&FLASH1M_V103_MARKER_1, FLASH1M_V103_MARKER_1_LENGTH},
+                                                       {(unsigned char **)&FLASH1M_V103_REPLACE_1, FLASH1M_V103_MARKER_1_LENGTH}},
+                                                      {{(unsigned char **)&FLASH1M_V103_MARKER_2, FLASH1M_V103_MARKER_2_LENGTH},
+                                                       {(unsigned char **)&FLASH1M_V103_REPLACE_2, FLASH1M_V103_MARKER_2_LENGTH}},
+                                                      {{(unsigned char **)&FLASH1M_V103_MARKER_3, FLASH1M_V103_MARKER_3_LENGTH},
+                                                       {(unsigned char **)&FLASH1M_V103_REPLACE_3, FLASH1M_V103_MARKER_3_LENGTH}},
+                                                      {{(unsigned char **)&FLASH1M_V103_MARKER_4, FLASH1M_V103_MARKER_4_LENGTH},
+                                                       {(unsigned char **)&FLASH1M_V103_REPLACE_4, FLASH1M_V103_MARKER_4_LENGTH}},
+                                                      {{(unsigned char **)&FLASH1M_V103_MARKER_5, FLASH1M_V103_MARKER_5_LENGTH},
+                                                       {(unsigned char **)&FLASH1M_V103_REPLACE_5, FLASH1M_V103_MARKER_5_LENGTH}},
+                                                      {{(unsigned char **)&FLASH1M_V103_MARKER_6, FLASH1M_V103_MARKER_6_LENGTH},
+                                                       {(unsigned char **)&FLASH1M_V103_REPLACE_6, FLASH1M_V103_MARKER_6_LENGTH}},
+                                                      {{(unsigned char **)&FLASH1M_V103_MARKER_7, FLASH1M_V103_MARKER_7_LENGTH},
+                                                       {(unsigned char **)&FLASH1M_V103_REPLACE_7, FLASH1M_V103_MARKER_7_LENGTH}}};
 
-static const FlashPattern_t FlashPatterns[] = {{{&IDENT_FLASH1M_V102, IDENT_FLASH1M_V102_LENGTH}, FLASH1M_V102_Patches, FLASH1M_V102_PATCH_COUNT, FLASH1M_V102},
-                                               {{&IDENT_FLASH1M_V103, IDENT_FLASH1M_V103_LENGTH}, FLASH1M_V103_Patches, FLASH1M_V103_PATCH_COUNT, FLASH1M_V103}};
+static const FlashPattern_t FlashPatterns[] = {{{(unsigned char **)&IDENT_FLASH1M_V102, IDENT_FLASH1M_V102_LENGTH}, (PatchPattern_t*)FLASH1M_V102_Patches, FLASH1M_V102_PATCH_COUNT, FLASH1M_V102},
+                                               {{(unsigned char **)&IDENT_FLASH1M_V103, IDENT_FLASH1M_V103_LENGTH}, (PatchPattern_t*)FLASH1M_V103_Patches, FLASH1M_V103_PATCH_COUNT, FLASH1M_V103}};
 
 
 
@@ -109,6 +109,10 @@ static void patch(FlashPattern_t* pattern)
         {
             memcpy(&filedata[position], (pattern->Patches[i].Replace.Pattern), (pattern->Patches[i].Marker.PatternLength));
         }
+        else
+        {
+            printf("ERROR: didn't find pattern #%d\n", i);
+        }
     }
 }
 
@@ -143,22 +147,9 @@ int main(int argc, char* argv[])
             char* output_name  = malloc(strlen(argv[1]) + 7);
             strcpy(output_name, "output-");
             strcat(output_name, argv[1]);
-            switch (flashtype) {
-                case FLASH1M_V102:
-                    printf("FLASH1M_V102 detected. Start patching!\n");
-                    patch(&pattern);
-                    outFile = fopen(output_name, "wb");
-                    fwrite(filedata, filesize, 1, outFile);
-                break;
-                case FLASH1M_V103:
-                    printf("FLASH1M_V103 detected. Start patching!\n");
-                    patch(&pattern);
-                    outFile = fopen(output_name, "wb");
-                    fwrite(filedata, filesize, 1, outFile);
-                break;
-                default:
-                break;
-            }
+            printf("%s detected. Start patching!\n", pattern.IdentPattern.Pattern);
+            patch(&pattern);
+            printf("Patching done. Saved new file to %s\n", output_name);
         }
 
         retCode = 0;
