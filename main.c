@@ -44,6 +44,14 @@ static const FlashPattern_t FlashPatterns[] = {{{(unsigned char **)&IDENT_FLASH1
 static unsigned char* filedata;
 static uint32_t filesize;
 
+static void split_path_file(char** p, char** f, char *pf) {
+    char *slash = pf, *next;
+    while ((next = strpbrk(slash + 1, "\\/"))) slash = next;
+    if (pf != slash) slash++;
+    *p = strndup(pf, slash - pf);
+    *f = strdup(slash);
+}
+
 static void readFile(char** filename)
 {
     FILE *fileptr;
@@ -99,8 +107,9 @@ static void getFlashPattern(FlashType_e* flashtype, FlashPattern_t* pattern)
     }
 }
 
-static void patch(FlashPattern_t* pattern)
+static int patch(FlashPattern_t* pattern)
 {
+    int retVal = 0;
     for (uint32_t i = 0; i < pattern->PatchCount; i++)
     {
         int32_t position = -1;
@@ -112,8 +121,11 @@ static void patch(FlashPattern_t* pattern)
         else
         {
             printf("ERROR: didn't find pattern #%d\n", i);
+            retVal = -1;
         }
     }
+
+    return retVal;
 }
 
 int main(int argc, char* argv[])
@@ -145,14 +157,26 @@ int main(int argc, char* argv[])
         else
         {
             char* output_name  = malloc(strlen(argv[1]) + 7);
-            strcpy(output_name, "output-");
-            strcat(output_name, argv[1]);
+            char* path;
+            char* filename;
+            split_path_file(&path, &filename, argv[1]);
+            strcpy(output_name, path);
+
+            strcat(output_name, "output-");
+            strcat(output_name, filename);
             outFile = fopen(output_name, "wb");
-            printf("%s detected. Start patching!\n", pattern.IdentPattern.Pattern);
-            patch(&pattern);
-            printf("Patching done. Saved new file to %s\n", output_name);
-            fwrite(filedata,filesize,1,outFile);
-            fclose(outFile);
+            printf("Start patching %s\n", pattern.IdentPattern.Pattern);
+
+            if (0 == patch(&pattern))
+            {
+                printf("Patching done. Saved new file to %s\n", output_name);
+                fwrite(filedata,filesize,1,outFile);
+                fclose(outFile);
+            }
+            else
+            {
+                printf("Error - file could not be patched. Has it been patches before?\n");
+            }
         }
 
         retCode = 0;
