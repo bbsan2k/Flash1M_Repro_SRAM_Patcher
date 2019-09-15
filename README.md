@@ -11,8 +11,8 @@ For normal (512KBit) games, other tools are patching SRAM just fine, as bank swi
 ## Why is this tool necessary?
 
 Other tools do not implement bank switching for the current repros for the following reasons:
-- Bank switching is not standardized
-- Each repro may use its own command for bank switching
+- Bank switching is not standardized for SRAM
+- Each repro may use its own address for bank switching
 - Early emulators handled the bank switching differently
 
 This tool tries to bridge the gap for those cartridges, as it implementsthe bank switching command.
@@ -22,3 +22,11 @@ The cartridge types supported are:
 
 ...and probably more that also use 0x9000000 address for bank switching
 
+## Build
+
+Use CMake to build the sources
+```cmake . && cmake --build .```
+
+## Use
+
+```./Flash1M_Repro_SRAM_Patcher <ROMFILE>.gba```
