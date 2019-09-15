@@ -147,9 +147,12 @@ int main(int argc, char* argv[])
             char* output_name  = malloc(strlen(argv[1]) + 7);
             strcpy(output_name, "output-");
             strcat(output_name, argv[1]);
+            outFile = fopen(output_name, "wb");
             printf("%s detected. Start patching!\n", pattern.IdentPattern.Pattern);
             patch(&pattern);
             printf("Patching done. Saved new file to %s\n", output_name);
+            fwrite(filedata,filesize,1,outFile);
+            fclose(outFile);
         }
 
         retCode = 0;
