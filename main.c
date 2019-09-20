@@ -25,7 +25,7 @@ static const PatchPattern_t FLASH1M_V103_Patches[] = {{{(unsigned char **)&FLASH
                                                       {{(unsigned char **)&FLASH1M_V103_MARKER_2, FLASH1M_V103_MARKER_2_LENGTH},
                                                        {(unsigned char **)&FLASH1M_V103_REPLACE_2, FLASH1M_V103_MARKER_2_LENGTH}},
                                                       {{(unsigned char **)&FLASH1M_V103_MARKER_3, FLASH1M_V103_MARKER_3_LENGTH},
-                                                       {(unsigned char **)&FLASH1M_V103_REPLACE_3, FLASH1M_V103_MARKER_3_LENGTH}},
+                                                       {(unsigned char **)&FLASH1M_V103_REPLACE_3, FLASH1M_V103_REPLACE_3_LENGTH}},
                                                       {{(unsigned char **)&FLASH1M_V103_MARKER_4, FLASH1M_V103_MARKER_4_LENGTH},
                                                        {(unsigned char **)&FLASH1M_V103_REPLACE_4, FLASH1M_V103_MARKER_4_LENGTH}},
                                                       {{(unsigned char **)&FLASH1M_V103_MARKER_5, FLASH1M_V103_MARKER_5_LENGTH},
@@ -116,7 +116,7 @@ static int patch(FlashPattern_t* pattern)
         getPosition((pattern->Patches[i].Marker.Pattern), (pattern->Patches[i].Marker.PatternLength), &position);
         if (position > 0)
         {
-            memcpy(&filedata[position], (pattern->Patches[i].Replace.Pattern), (pattern->Patches[i].Marker.PatternLength));
+            memcpy(&filedata[position], (pattern->Patches[i].Replace.Pattern), (pattern->Patches[i].Replace.PatternLength));
         }
         else
         {
