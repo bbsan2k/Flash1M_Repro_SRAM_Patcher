@@ -6,37 +6,49 @@
 
 #include "Patterns.h"
 
-static const PatchPattern_t FLASH1M_V102_Patches[] = {{{(unsigned char *)FLASH1M_V102_MARKER_1, FLASH1M_V102_MARKER_1_LENGTH},
-                                                       {(unsigned char *)FLASH1M_V102_REPLACE_1, FLASH1M_V102_MARKER_1_LENGTH}},
-                                                      {{(unsigned char *)FLASH1M_V102_MARKER_2, FLASH1M_V102_MARKER_2_LENGTH},
-                                                       {(unsigned char *)FLASH1M_V102_REPLACE_2, FLASH1M_V102_MARKER_2_LENGTH}},
-                                                      {{(unsigned char *)FLASH1M_V102_MARKER_3, FLASH1M_V102_MARKER_3_LENGTH},
-                                                       {(unsigned char *)FLASH1M_V102_REPLACE_3, FLASH1M_V102_REPLACE_3_LENGTH}},
-                                                      {{(unsigned char *)FLASH1M_V102_MARKER_4, FLASH1M_V102_MARKER_4_LENGTH},
-                                                       {(unsigned char *)FLASH1M_V102_REPLACE_4, FLASH1M_V102_MARKER_4_LENGTH}},
-                                                      {{(unsigned char *)FLASH1M_V102_MARKER_5, FLASH1M_V102_MARKER_5_LENGTH},
-                                                       {(unsigned char *)FLASH1M_V102_REPLACE_5, FLASH1M_V102_MARKER_5_LENGTH}},
-                                                      {{(unsigned char *)FLASH1M_V102_MARKER_6, FLASH1M_V102_MARKER_6_LENGTH},
-                                                       {(unsigned char *)FLASH1M_V102_REPLACE_6, FLASH1M_V102_MARKER_6_LENGTH}}};
+static const PatchPattern_t FLASH1M_V102_Patches[] = {{{(unsigned char *)FLASH1M_V102_MARKER_1, COUNT_OF(FLASH1M_V102_MARKER_1)},
+                                                       {(unsigned char *)FLASH1M_V102_REPLACE_1, COUNT_OF(FLASH1M_V102_REPLACE_1)}},
+                                                      {{(unsigned char *)FLASH1M_V102_MARKER_2, COUNT_OF(FLASH1M_V102_MARKER_2)},
+                                                       {(unsigned char *)FLASH1M_V102_REPLACE_2, COUNT_OF(FLASH1M_V102_REPLACE_2)}},
+                                                      {{(unsigned char *)FLASH1M_V102_MARKER_3, COUNT_OF(FLASH1M_V102_MARKER_3)},
+                                                       {(unsigned char *)FLASH1M_V102_REPLACE_3, COUNT_OF(FLASH1M_V102_REPLACE_3)}},
+                                                      {{(unsigned char *)FLASH1M_V102_MARKER_4, COUNT_OF(FLASH1M_V102_MARKER_4)},
+                                                       {(unsigned char *)FLASH1M_V102_REPLACE_4, COUNT_OF(FLASH1M_V102_REPLACE_4)}},
+                                                      {{(unsigned char *)FLASH1M_V102_MARKER_5, COUNT_OF(FLASH1M_V102_MARKER_5)},
+                                                       {(unsigned char *)FLASH1M_V102_REPLACE_5, COUNT_OF(FLASH1M_V102_REPLACE_5)}},
+                                                      {{(unsigned char *)FLASH1M_V102_MARKER_6, COUNT_OF(FLASH1M_V102_MARKER_6)},
+                                                       {(unsigned char *)FLASH1M_V102_REPLACE_6, COUNT_OF(FLASH1M_V102_REPLACE_6)}}};
 
 
-static const PatchPattern_t FLASH1M_V103_Patches[] = {{{(unsigned char *)FLASH1M_V103_MARKER_1, FLASH1M_V103_MARKER_1_LENGTH},
-                                                       {(unsigned char *)FLASH1M_V103_REPLACE_1, FLASH1M_V103_MARKER_1_LENGTH}},
-                                                      {{(unsigned char *)FLASH1M_V103_MARKER_2, FLASH1M_V103_MARKER_2_LENGTH},
-                                                       {(unsigned char *)FLASH1M_V103_REPLACE_2, FLASH1M_V103_MARKER_2_LENGTH}},
-                                                      {{(unsigned char *)FLASH1M_V103_MARKER_3, FLASH1M_V103_MARKER_3_LENGTH},
-                                                       {(unsigned char *)FLASH1M_V103_REPLACE_3, FLASH1M_V103_REPLACE_3_LENGTH}},
-                                                      {{(unsigned char *)FLASH1M_V103_MARKER_4, FLASH1M_V103_MARKER_4_LENGTH},
-                                                       {(unsigned char *)FLASH1M_V103_REPLACE_4, FLASH1M_V103_MARKER_4_LENGTH}},
-                                                      {{(unsigned char *)FLASH1M_V103_MARKER_5, FLASH1M_V103_MARKER_5_LENGTH},
-                                                       {(unsigned char *)FLASH1M_V103_REPLACE_5, FLASH1M_V103_MARKER_5_LENGTH}},
-                                                      {{(unsigned char *)FLASH1M_V103_MARKER_6, FLASH1M_V103_MARKER_6_LENGTH},
-                                                       {(unsigned char *)FLASH1M_V103_REPLACE_6, FLASH1M_V103_MARKER_6_LENGTH}},
-                                                      {{(unsigned char *)FLASH1M_V103_MARKER_7, FLASH1M_V103_MARKER_7_LENGTH},
-                                                       {(unsigned char *)FLASH1M_V103_REPLACE_7, FLASH1M_V103_MARKER_7_LENGTH}}};
+static const PatchPattern_t FLASH1M_V103_Patches[] = {{{(unsigned char *)FLASH1M_V103_MARKER_1, COUNT_OF(FLASH1M_V103_MARKER_1)},
+                                                       {(unsigned char *)FLASH1M_V103_REPLACE_1, COUNT_OF(FLASH1M_V103_REPLACE_1)}},
+                                                      {{(unsigned char *)FLASH1M_V103_MARKER_2, COUNT_OF(FLASH1M_V103_MARKER_2)},
+                                                       {(unsigned char *)FLASH1M_V103_REPLACE_2, COUNT_OF(FLASH1M_V103_REPLACE_2)}},
+                                                      {{(unsigned char *)FLASH1M_V103_MARKER_3, COUNT_OF(FLASH1M_V103_MARKER_3)},
+                                                       {(unsigned char *)FLASH1M_V103_REPLACE_3, COUNT_OF(FLASH1M_V103_REPLACE_3)}},
+                                                      {{(unsigned char *)FLASH1M_V103_MARKER_4, COUNT_OF(FLASH1M_V103_MARKER_4)},
+                                                       {(unsigned char *)FLASH1M_V103_REPLACE_4, COUNT_OF(FLASH1M_V103_REPLACE_4)}},
+                                                      {{(unsigned char *)FLASH1M_V103_MARKER_5, COUNT_OF(FLASH1M_V103_MARKER_5)},
+                                                       {(unsigned char *)FLASH1M_V103_REPLACE_5, COUNT_OF(FLASH1M_V103_REPLACE_5)}},
+                                                      {{(unsigned char *)FLASH1M_V103_MARKER_6, COUNT_OF(FLASH1M_V103_MARKER_6)},
+                                                       {(unsigned char *)FLASH1M_V103_REPLACE_6, COUNT_OF(FLASH1M_V103_REPLACE_6)}},
+                                                      {{(unsigned char *)FLASH1M_V103_MARKER_7, COUNT_OF(FLASH1M_V103_MARKER_7)},
+                                                       {(unsigned char *)FLASH1M_V103_REPLACE_7, COUNT_OF(FLASH1M_V103_REPLACE_7)}}};
+
+static const PatchPattern_t FLASH512_Patches[] = {{{(unsigned char *)FLASH512_MARKER_1, COUNT_OF(FLASH512_MARKER_1)},
+                                                   {(unsigned char *)FLASH512_REPLACE_1, COUNT_OF(FLASH512_REPLACE_1)}},
+                                                  {{(unsigned char *)FLASH512_MARKER_2, COUNT_OF(FLASH512_MARKER_2)},
+                                                   {(unsigned char *)FLASH512_REPLACE_2, COUNT_OF(FLASH512_REPLACE_2)}},
+                                                  {{(unsigned char *)FLASH512_MARKER_3, COUNT_OF(FLASH512_MARKER_3)},
+                                                   {(unsigned char *)FLASH512_REPLACE_3, COUNT_OF(FLASH512_REPLACE_3)}},
+                                                  {{(unsigned char *)FLASH512_MARKER_4, COUNT_OF(FLASH512_MARKER_4)},
+                                                   {(unsigned char *)FLASH512_REPLACE_4, COUNT_OF(FLASH512_REPLACE_4)}},
+                                                  {{(unsigned char *)FLASH512_MARKER_5, COUNT_OF(FLASH512_MARKER_5)},
+                                                   {(unsigned char *)FLASH512_REPLACE_5, COUNT_OF(FLASH512_REPLACE_5)}}};
 
 static const FlashPattern_t FlashPatterns[] = {{{(unsigned char *)IDENT_FLASH1M_V102, IDENT_FLASH1M_V102_LENGTH}, (PatchPattern_t*)FLASH1M_V102_Patches, FLASH1M_V102_PATCH_COUNT, FLASH1M_V102},
-                                               {{(unsigned char *)IDENT_FLASH1M_V103, IDENT_FLASH1M_V103_LENGTH}, (PatchPattern_t*)FLASH1M_V103_Patches, FLASH1M_V103_PATCH_COUNT, FLASH1M_V103}};
+                                               {{(unsigned char *)IDENT_FLASH1M_V103, IDENT_FLASH1M_V103_LENGTH}, (PatchPattern_t*)FLASH1M_V103_Patches, FLASH1M_V103_PATCH_COUNT, FLASH1M_V103},
+                                               {{(unsigned char *)IDENT_FLASH512, IDENT_FLASH512_LENGTH}, (PatchPattern_t*)FLASH512_Patches, FLASH512_PATCH_COUNT, FLASH512}};
 
 
 
@@ -71,6 +83,7 @@ static void getPosition(const unsigned char* const pattern, uint32_t pattern_siz
 {
     uint32_t matched_idx = 0U;
     *position = -1;
+
     for (uint32_t i = 0; i < filesize; i++)
     {
         if (filedata[i] == pattern[matched_idx])
@@ -127,6 +140,7 @@ static int patch(FlashPattern_t* pattern)
 
     return retVal;
 }
+
 
 int main(int argc, char* argv[])
 {
