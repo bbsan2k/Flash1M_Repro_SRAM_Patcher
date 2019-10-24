@@ -8,8 +8,6 @@
 #include <filesystem>
 #include <sstream>
 
-#include "json.hpp"
-
 #define HEX_BASE ( 16 )
 
 std::vector<PatchSet> patchsets;
