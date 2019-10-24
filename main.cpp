@@ -189,8 +189,8 @@ static void init()
                        std::vector<bool> {(false),(false),(false),(false),(false),(false),(false),(false),
                                           (false),(false),(false),(false),(false),(false),(false),(false),
                                           (false),(false),(false),(false),(false),(false),( true),(false)});
-	
-	patchsets.push_back(*patchset);
+
+    patchsets.push_back(*patchset);
 
     name = "EEPROM_V124";
 
@@ -334,7 +334,7 @@ static void init()
 
 int main(int argc, char* argv[])
 {
-	init();
+    init();
     int retCode;
     if (argc < 2)
     {
@@ -354,42 +354,42 @@ int main(int argc, char* argv[])
 
         bool applied = false;
 
-		try {
-			        
-			for (PatchSet patchset : patchsets)
-			{
+        try {
+
+            for (PatchSet patchset : patchsets)
+            {
                 std::string applicableName;
                 if (patchset.isApplicable(file_buffer, &applicableName))
-				{
+                {
                     std::cout << "Applying patches for " << applicableName << std::endl;
-					patchset.applyPatches(&file_buffer);
-					applied = true;
-					break;
-				}
-			}
+                    patchset.applyPatches(&file_buffer);
+                    applied = true;
+                    break;
+                }
+            }
 
-			if (!applied)
-			{
-				throw std::string("Error: Could not find applicable patchset.");
-			}
-			
-			std::filesystem::path path(argv[1]);
+            if (!applied)
+            {
+                throw std::string("Error: Could not find applicable patchset.");
+            }
 
-			std::stringstream ss;
-			ss << path.parent_path().string() << "output_" << path.filename().string();
-			std::string outputfilename = ss.str();
+            std::filesystem::path path(argv[1]);
 
-			std::cout << "Success! Wrote " << outputfilename << std::endl;
+            std::stringstream ss;
+            ss << path.parent_path().string() << "output_" << path.filename().string();
+            std::string outputfilename = ss.str();
 
-			std::ofstream output(outputfilename, std::ios::out | std::ios::binary);
-			output.write((char*) file_buffer.data(), file_buffer.size());
-			output.close();
-			retCode = 0;
+            std::cout << "Success! Wrote " << outputfilename << std::endl;
+
+            std::ofstream output(outputfilename, std::ios::out | std::ios::binary);
+            output.write((char*) file_buffer.data(), file_buffer.size());
+            output.close();
+            retCode = 0;
 
         } catch (std::string& message) {
             std::cout << message << std::endl;
-			retCode = 2;
-		}
+            retCode = 2;
+        }
 
         
 
