@@ -107,4 +107,3 @@ void PatchSet::applyPatches(std::vector<unsigned char>* data)
 
     }
 }
-

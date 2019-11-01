@@ -17,8 +17,8 @@ typedef struct
 class PatchSet
 {
 public:
-    PatchSet(std::string& identifier) { names = std::vector<std::string> {identifier}; };
-    PatchSet(std::vector<std::string>& identifiers) { names = identifiers; };
+    PatchSet(const std::string& identifier) { names = std::vector<std::string> {identifier}; };
+    PatchSet(const std::vector<std::string>& identifiers) { names = identifiers; };
     void addPatch(const std::vector<unsigned char>& marker, const std::vector<unsigned char>& replace, const std::vector<bool>& maskMarker = std::vector<bool>(), const std::vector<bool>& maskReplace = std::vector<bool>());
     std::vector< unsigned char > getIdentPattern() ;
     std::vector< Patch > getPatches() {return patches;};
@@ -26,11 +26,14 @@ public:
     void applyPatches(std::vector<unsigned char>* data);
 
 
+protected:
+    std::vector< Patch > patches;
+
 private:
     int64_t findIndex(std::vector<unsigned char>* data, Patch* patch);
-
     std::vector<std::string> names;
-    std::vector< Patch > patches;
+
 };
+
 
 #endif // PATCHSET_H
