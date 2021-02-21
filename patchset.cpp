@@ -1,4 +1,5 @@
 #include "patchset.h"
+#include <algorithm>
 
 
 void PatchSet::addPatch(const std::vector<unsigned char>& marker,
