@@ -6,7 +6,7 @@
 #include <string>
 #include <filesystem>
 #include <sstream>
-
+#include <algorithm>
 
 std::vector<std::string> types;
 
