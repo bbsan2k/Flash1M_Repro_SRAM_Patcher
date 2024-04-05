@@ -170,7 +170,7 @@ int main(int argc, char* argv[])
         }
         else
         {
-            char* output_name  = malloc(strlen(argv[1]) + 7);
+            char* output_name  = (char*)malloc(strlen(argv[1]) + 7);
             char* path;
             char* filename;
             split_path_file(&path, &filename, argv[1]);

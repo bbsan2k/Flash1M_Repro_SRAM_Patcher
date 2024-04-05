@@ -1,5 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
-
+cmake_minimum_required(VERSION 3.19)
 
 project(Flash1M_Repro_SRAM_Patcher)
 add_executable(${PROJECT_NAME} "main.cpp"
