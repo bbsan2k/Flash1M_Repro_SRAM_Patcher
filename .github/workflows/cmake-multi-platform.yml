@@ -71,3 +71,5 @@ jobs:
       uses: actions/download-artifact@v2
     - name: Upload to Release
       uses: meeDamian/github-release@2.0
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
